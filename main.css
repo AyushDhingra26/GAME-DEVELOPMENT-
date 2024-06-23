@@ -1,0 +1,96 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2e2e2e; /* Darker background to contrast game elements */
+  overflow: hidden;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.gameContainer {
+  background-image: url(bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dino {
+  background-image: url(dino.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 233px;
+  height: 114px;
+  position: absolute;
+  bottom: 0;
+  left: 52px;
+  transition: left 0.2s;
+}
+
+.obstacle {
+  width: 166px;
+  height: 113px;
+  background-image: url(dragon.png);
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+}
+
+.animateDino {
+  animation: dinoJump 1s linear;
+}
+
+.obstacleAni {
+  animation: obstacleMove 5s linear infinite;
+}
+
+.gameOver {
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  font-size: 53px;
+  text-align: center;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#scoreCont {
+  font-size: 25px;
+  color: #ffffff;
+  font-weight: bold;
+  position: absolute;
+  right: 45px;
+  top: 31px;
+  border: 2px solid #ffffff;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@keyframes dinoJump {
+  0% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 300px; /* Increased jump height for more dramatic effect */
+  }
+  100% {
+    bottom: 0;
+  }
+}
+
+@keyframes obstacleMove {
+  0% {
+    left: 100vw;
+  }
+  100% {
+    left: -10vw;
+  }
+}
